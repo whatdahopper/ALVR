@@ -322,11 +322,7 @@ pub fn entry_point() {
             views_config[0].max_image_rect_height,
         );
 
-        let refresh_rates = if exts.fb_display_refresh_rate {
-            xr_session.enumerate_display_refresh_rates().unwrap()
-        } else {
-            vec![90.0]
-        };
+        let refresh_rates = vec![72.0, 90.0]; // hardcoded hack.
 
         if exts.fb_color_space {
             xr_session
